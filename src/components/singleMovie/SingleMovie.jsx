@@ -3,10 +3,11 @@ import { useGlobalContext } from "../../context/context";
 import { BACKDROP_PATH, IMAGE_END_PATH } from "../../utils/constant";
 import Genres from "../genres/Genres";
 import Vote from "../stars/Stars";
+import Videos from "../videos/Videos";
 import { Wrapper } from "./styles";
 
 const SingleMovie = ({ singleMovie }) => {
-  console.log(singleMovie);
+  // console.log(singleMovie);
 
   const { id, date, genres, desc, image, title, vote, backdrop, count } =
     singleMovie;
@@ -33,6 +34,7 @@ const SingleMovie = ({ singleMovie }) => {
               <Genres genres={genres} />
               <h1 className="desc">{desc}</h1>
               <button className="fav-btn btn">Add to favorite</button>
+              <Videos />
             </div>
           </div>
         </div>

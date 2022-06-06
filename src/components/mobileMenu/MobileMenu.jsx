@@ -7,8 +7,6 @@ import { Wrapper } from "./styles";
 const MobileMenu = () => {
   const { isSidebarOpen, toggleSidebar } = useGlobalContext();
 
-  console.log(isSidebarOpen);
-
   return (
     <Wrapper>
       <div

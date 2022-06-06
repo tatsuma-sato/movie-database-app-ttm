@@ -7,8 +7,7 @@ const getVoteCount = (oriVote) => {
 };
 
 const Stars = ({ vote, count }) => {
-  console.log(vote);
-  console.log(count);
+
   const tempStars = Array.from({ length: 5 }, (_, index) => {
     const number = index + 0.5;
     return (

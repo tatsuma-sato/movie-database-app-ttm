@@ -7,7 +7,7 @@ const links = [
   {
     id: 1,
     text: "movie",
-    path: "/all-movies",
+    path: "/",
     icon: <BiCameraMovie />,
   },
   {
