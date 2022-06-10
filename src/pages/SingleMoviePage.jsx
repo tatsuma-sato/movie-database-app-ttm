@@ -8,8 +8,14 @@ import { END_POINT } from "../utils/constant";
 
 const SingleMoviePage = () => {
   const { id: movieId } = useParams();
-  const { singleMovie, setSingleMovie, isLoading, setIsLoading } =
-    useGlobalContext();
+  const {
+    singleMovie,
+    setSingleMovie,
+    isLoading,
+    setIsLoading,
+    page,
+    setPage,
+  } = useGlobalContext();
 
   useEffect(() => {
     setIsLoading(true);
@@ -47,7 +53,7 @@ const SingleMoviePage = () => {
       }
     };
     fetchSingleMovie();
-  }, []);
+  }, [movieId]);
 
   if (isLoading || !singleMovie) return <h1>Loading....</h1>;
 

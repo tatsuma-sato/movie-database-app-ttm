@@ -58,3 +58,34 @@ export const replaceGenre = (genreId) => {
       return null;
   }
 };
+
+export const setMovieValue = (results) => {
+  const movieData = [];
+  results.forEach((item) => {
+    const {
+      id,
+      original_title,
+      overview: desc,
+      popularity,
+      poster_path,
+      title,
+      vote_average: vote,
+      vote_count: count,
+      release_date: date,
+      genre_ids,
+    } = item;
+    movieData.push({
+      id,
+      original_title,
+      overview: desc,
+      popularity,
+      poster_path,
+      title,
+      vote,
+      date,
+      genre_ids,
+      count,
+    });
+  });
+  return movieData;
+};

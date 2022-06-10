@@ -22,7 +22,6 @@ const Videos = () => {
       } catch (error) {}
     };
     getVideos();
-    console.log(videos);
   }, [movieId]);
 
   if (isLoading) return <h1 color="pink">Loading...</h1>;

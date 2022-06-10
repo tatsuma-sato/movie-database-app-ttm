@@ -4,8 +4,6 @@ import { Wrapper } from "./styles";
 const YOUTUBE = "https://www.youtube.com/embed/";
 
 const VideoList = ({ videos }) => {
-  console.log(videos);
-
   return (
     <Wrapper>
       <div className="video-list">

@@ -34,6 +34,9 @@ export const Wrapper = styled.nav`
     /* border: none; */
   }
   .submit-btn {
+    :disabled {
+      cursor: not-allowed;
+    }
   }
 
   .user {

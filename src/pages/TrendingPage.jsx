@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { MovieList } from "../components";
+import Pagination from "../components/pagination/Pagination";
 import { useGlobalContext } from "../context/context";
 import useFetch from "../utils/useFetch";
+import qs from "query-string";
 
 const END_POINT = "https://api.themoviedb.org/3/movie/popular?api_key=";
 
 const TrendingPage = () => {
-  const { movies, setMovies, isLoading, setIsLoading } = useGlobalContext();
+  const { movies, setMovies, isLoading, setIsLoading, page, setPage } =
+    useGlobalContext();
+  const location = useLocation();
 
   // const data = useFetch(
   //   `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&page=1`
@@ -15,12 +20,14 @@ const TrendingPage = () => {
     setIsLoading(true);
     const fetchMovies = async () => {
       const response = await fetch(
-        END_POINT + process.env.REACT_APP_MOVIE_API_KEY
+        `${END_POINT}${process.env.REACT_APP_MOVIE_API_KEY}&page=${page}&total_pages=20`
       );
-      const { results } = await response.json();
-      console.log(results);
+      // const { results } = await response.json();
+      // console.log(results);
+      const data = await response.json();
+      console.log(data);
       const movieData = [];
-      await results.forEach((item) => {
+      await data.results.forEach((item) => {
         const {
           id,
           original_title,
@@ -50,13 +57,14 @@ const TrendingPage = () => {
       setIsLoading(false);
     };
     fetchMovies();
-  }, []);
+  }, [page]);
 
   if (isLoading) return <h1>Loading...</h1>;
 
   return (
     <div>
       <MovieList movies={movies} />
+      <Pagination />
     </div>
   );
 };

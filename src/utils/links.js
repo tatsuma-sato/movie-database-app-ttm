@@ -1,6 +1,6 @@
 import { BiCameraMovie, BiTrendingUp } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
-import { FaTv } from "react-icons/fa";
+import { FaTv, FaRegCompass } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 
 const links = [
@@ -13,14 +13,14 @@ const links = [
   {
     id: 2,
     text: "trending",
-    path: "/trending",
+    path: "/trending?p=1",
     icon: <BiTrendingUp />,
   },
   {
     id: 3,
-    text: "drama",
-    path: "/all-dramas",
-    icon: <FaTv />,
+    text: "discover",
+    path: "/discover",
+    icon: <FaRegCompass />,
   },
   {
     id: 4,
@@ -36,4 +36,4 @@ const links = [
   },
 ];
 
-export default links
+export default links;

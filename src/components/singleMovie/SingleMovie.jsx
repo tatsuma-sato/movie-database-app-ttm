@@ -2,6 +2,7 @@ import React from "react";
 import { useGlobalContext } from "../../context/context";
 import { BACKDROP_PATH, IMAGE_END_PATH } from "../../utils/constant";
 import Genres from "../genres/Genres";
+import RelatedMovies from "../relatedMovies/RelatedMovies";
 import Vote from "../stars/Stars";
 import Videos from "../videos/Videos";
 import { Wrapper } from "./styles";
@@ -35,6 +36,7 @@ const SingleMovie = ({ singleMovie }) => {
               <h1 className="desc">{desc}</h1>
               <button className="fav-btn btn">Add to favorite</button>
               <Videos />
+              <RelatedMovies />
             </div>
           </div>
         </div>

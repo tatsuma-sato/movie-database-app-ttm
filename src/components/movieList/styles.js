@@ -16,12 +16,15 @@ export const Wrapper = styled.section`
 
   .image-container {
     max-width: 200px;
+    height: 300px;
+
     > img {
       width: 100%;
       height: 100%;
     }
     @media (min-width: 1024px) {
       max-width: 400px;
+      height: 430px;
     }
   }
 
